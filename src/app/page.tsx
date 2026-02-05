@@ -38,9 +38,19 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
-        <div className="absolute inset-0 confetti-heavy opacity-30" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-aerial.jpg"
+            alt="Firefly Community Aerial View"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/85 to-slate-900/90" />
+        <div className="absolute inset-0 confetti-heavy opacity-20" />
         
         {/* Animated falling confetti */}
         <div className="confetti-animated">
