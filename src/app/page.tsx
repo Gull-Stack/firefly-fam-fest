@@ -302,11 +302,13 @@ export default function HomePage() {
               </div>
               <div className="order-1 lg:order-2 scroll-reveal-right">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
-                  <Image
-                    src="/images/food-trucks.png"
-                    alt="Food trucks and delicious treats"
-                    fill
-                    className="object-cover ken-burns group-hover:scale-110 transition-transform duration-700"
+                  <video
+                    src="/images/food-village.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
               </div>
