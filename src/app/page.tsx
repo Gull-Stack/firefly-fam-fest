@@ -107,7 +107,7 @@ export default function HomePage() {
               {/* BIG Date & Time */}
               <div className="mb-10 bg-white/10 backdrop-blur-sm rounded-2xl p-6 inline-block border border-white/20">
                 <p className="text-2xl md:text-4xl font-bold text-white mb-2">Saturday, May 9, 2026</p>
-                <p className="text-xl md:text-3xl font-semibold text-amber-400">10 AM – 6 PM</p>
+                <p className="text-xl md:text-3xl font-semibold text-amber-400">11 AM – 8 PM</p>
                 <p className="text-lg md:text-xl text-white/80 mt-2">📍 Eagle Mountain, Utah</p>
               </div>
 
@@ -495,7 +495,7 @@ export default function HomePage() {
             Register Free Now
           </button>
           <p className="mt-6 text-white/50 text-sm">
-            Saturday, May 9, 2026 • 10 AM – 6 PM • Eagle Mountain, Utah
+            Saturday, May 9, 2026 • 11 AM – 8 PM • Eagle Mountain, Utah
           </p>
         </div>
       </section>
