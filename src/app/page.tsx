@@ -442,8 +442,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900">
+      {/* Stats Section - Darker Navy */}
+      <section className="py-20 bg-[#0a1628]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -452,7 +452,7 @@ export default function HomePage() {
               { num: '10+', label: 'Food Trucks' },
               { num: '1000s', label: 'Expected Guests' },
             ].map((stat, i) => (
-              <div key={i}>
+              <div key={i} className="scroll-reveal" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2">{stat.num}</div>
                 <div className="text-white/60">{stat.label}</div>
               </div>
