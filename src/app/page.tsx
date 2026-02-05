@@ -1,249 +1,276 @@
 'use client';
 
-import { useState } from 'react';
-import { Calendar, MapPin, Clock, Ticket, ChevronRight, X, PartyPopper, Train, Truck, Palette, Users, UtensilsCrossed, Music, Sparkles, Scissors } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { Calendar, MapPin, Clock, Ticket, X, ChevronDown, Check } from 'lucide-react';
 
 export default function HomePage() {
   const [showModal, setShowModal] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="min-h-screen">
-      {/* Sticky Registration Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#FFD93D] via-[#FF8C42] to-[#FF6B9D] py-3 px-4 text-center shadow-lg">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <p className="text-sm md:text-base font-semibold text-white drop-shadow">
-            🎉 Register FREE for Activity Tickets, Punch Passes & Coupons!
-          </p>
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          <div className={`font-bold text-2xl transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+            <span className="text-amber-400">Firefly</span> Fam Fest
+          </div>
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#about" className={`text-sm font-medium transition-colors hover:text-amber-400 ${scrolled ? 'text-gray-600' : 'text-white/80'}`}>About</a>
+            <a href="#attractions" className={`text-sm font-medium transition-colors hover:text-amber-400 ${scrolled ? 'text-gray-600' : 'text-white/80'}`}>Attractions</a>
+            <a href="#register" className={`text-sm font-medium transition-colors hover:text-amber-400 ${scrolled ? 'text-gray-600' : 'text-white/80'}`}>Register</a>
+          </div>
           <button 
             onClick={() => setShowModal(true)}
-            className="bg-white text-[#FF6B9D] px-4 py-2 rounded-full text-sm font-bold hover:bg-opacity-90 transition-all shadow-md hover:scale-105"
+            className="bg-amber-400 hover:bg-amber-500 text-gray-900 px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105"
           >
-            Register Now
+            Register Free
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen pt-16 relative overflow-hidden section-gradient">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 text-6xl">🎈</div>
-          <div className="absolute top-40 right-20 text-5xl">🎪</div>
-          <div className="absolute bottom-40 left-1/4 text-4xl">🎠</div>
-          <div className="absolute top-1/3 right-1/4 text-5xl">🎡</div>
-          <div className="absolute bottom-20 right-10 text-6xl">🎉</div>
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
+        <div className="absolute inset-0 bg-[url('/hero-pattern.svg')] opacity-10" />
+        
+        {/* Floating orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl" />
 
-        <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Logo placeholder */}
-            <div className="mb-8">
-              <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <span className="text-[#FFD93D] font-bold text-sm tracking-wide">✨ GRAND OPENING EVENT ✨</span>
-              </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          <div className="inline-block mb-6">
+            <span className="bg-white/10 backdrop-blur-sm text-amber-300 text-sm font-medium px-4 py-2 rounded-full border border-white/10">
+              Grand Opening Event — May 9, 2026
+            </span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+            Utah's Premier<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-pink-400">
+              Family Festival
+            </span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+            An unforgettable day of wonder, play, and togetherness at Eagle Mountain's newest community.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <button 
+              onClick={() => setShowModal(true)}
+              className="group bg-gradient-to-r from-amber-400 to-orange-500 text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25 flex items-center justify-center gap-2"
+            >
+              <Ticket className="w-5 h-5" />
+              Register Free
+            </button>
+            <a 
+              href="#attractions"
+              className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+            >
+              Explore Activities
+            </a>
+          </div>
+
+          {/* Event Details Pills */}
+          <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+              <Calendar className="w-4 h-4 text-amber-400" />
+              <span className="text-white/80 text-sm">Saturday, May 9</span>
             </div>
-
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-              <span className="gradient-text">Firefly</span>{' '}
-              <span className="text-white">Fam Fest</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Grab your kiddos and head over to <strong>Utah's largest festival</strong> created just for families!
-            </p>
-
-            {/* Event Details */}
-            <div className="flex flex-wrap justify-center gap-4 mb-10">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-3 rounded-full">
-                <Calendar className="w-5 h-5 text-[#FFD93D]" />
-                <span className="text-white font-medium">Saturday, May 9, 2026</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-3 rounded-full">
-                <MapPin className="w-5 h-5 text-[#FF6B9D]" />
-                <span className="text-white font-medium">Eagle Mountain, Utah</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-3 rounded-full">
-                <Clock className="w-5 h-5 text-[#00BBF9]" />
-                <span className="text-white font-medium">10 AM - 6 PM</span>
-              </div>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+              <Clock className="w-4 h-4 text-amber-400" />
+              <span className="text-white/80 text-sm">10 AM – 6 PM</span>
             </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => setShowModal(true)}
-                className="px-8 py-4 bg-gradient-to-r from-[#FFD93D] to-[#FF8C42] text-[#1A1A2E] font-bold text-lg rounded-full shadow-xl hover:scale-105 transition-all pulse-glow flex items-center justify-center gap-2"
-              >
-                <Ticket className="w-5 h-5" />
-                Register FREE
-              </button>
-              <a 
-                href="#attractions"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-full border-2 border-white/30 hover:bg-white/20 transition-all flex items-center justify-center gap-2"
-              >
-                See All Attractions
-                <ChevronRight className="w-5 h-5" />
-              </a>
-            </div>
-
-            {/* Registration Benefits */}
-            <div className="mt-12 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 max-w-xl mx-auto">
-              <p className="text-[#FFD93D] font-bold mb-3">🎟️ Registered Guests Receive:</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-white/80 text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="text-[#00F5D4]">✓</span>
-                  5 Free Activity Tickets
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#00F5D4]">✓</span>
-                  Punch Passes
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#00F5D4]">✓</span>
-                  Free Treat Coupons
-                </div>
-              </div>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+              <MapPin className="w-4 h-4 text-amber-400" />
+              <span className="text-white/80 text-sm">Eagle Mountain, UT</span>
             </div>
           </div>
         </div>
 
-        {/* Wave divider */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#FEFEFE"/>
-          </svg>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-6 h-6 text-white/50" />
+        </div>
+      </section>
+
+      {/* Why Register Section */}
+      <section id="about" className="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">Free Registration</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                Skip the Lines.<br />Get the Perks.
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Walk-ins are welcome, but registered families get exclusive benefits that make the day even better.
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  '5 free activity tickets (bounce houses, train, crafts)',
+                  'Punch passes for food & treat discounts',
+                  'Exclusive coupons from local vendors',
+                  'Priority entry — no waiting at registration'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button 
+                onClick={() => setShowModal(true)}
+                className="mt-10 bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105"
+              >
+                Register Your Family
+              </button>
+            </div>
+
+            <div className="relative">
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-amber-100 to-orange-100 p-8">
+                <div className="w-full h-full rounded-2xl bg-white shadow-2xl flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="text-6xl mb-4">🎟️</div>
+                    <p className="text-2xl font-bold text-gray-900 mb-2">Your Free Pass</p>
+                    <p className="text-gray-500">5 Activity Tickets + Perks</p>
+                  </div>
+                </div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-200 rounded-2xl -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-amber-200 rounded-full -z-10" />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Attractions Section */}
-      <section id="attractions" className="py-20 section-light">
+      <section id="attractions" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-              <span className="gradient-text">Check Out</span> All The Attractions!
+            <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">All-Day Entertainment</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-4">
+              Something for Everyone
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Non-stop fun for the whole family — from toddlers to grown-ups!
+              From toddlers to grandparents, we've planned a full day of unforgettable experiences.
             </p>
           </div>
 
-          {/* Attraction Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Alternating Feature Sections */}
+          <div className="space-y-24">
             
-            {/* Bounce House Village */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-4 border-[#FF8C42]">
-              <div className="h-48 bg-gradient-to-br from-[#FF8C42] to-[#FFD93D] flex items-center justify-center">
-                <PartyPopper className="w-24 h-24 text-white" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-[#FF8C42]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🏰 Utah's Biggest Bounce House Village
+            {/* Bounce Houses */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-sm font-medium rounded-full mb-4">
+                  Requires Activity Ticket
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  Utah's Largest Bounce Village
                 </h3>
-                <p className="text-gray-600">
-                  Your kids will love this giant inflatable playground featuring massive slides, thrilling obstacle courses, and high-energy fun. This action-packed fun zone will keep kids jumping with joy all day long!
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  An entire inflatable playground featuring massive slides, obstacle courses, and bounce houses for all ages. This action-packed zone will keep kids jumping with joy all day.
                 </p>
-                <div className="mt-4 inline-block px-3 py-1 bg-[#FF8C42]/10 text-[#FF8C42] text-sm font-semibold rounded-full">
-                  🎟️ Requires Activity Ticket
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center gap-2"><span className="text-amber-500">•</span> Giant slides & obstacle courses</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-500">•</span> Age-appropriate zones</li>
+                  <li className="flex items-center gap-2"><span className="text-amber-500">•</span> Shaded rest areas for parents</li>
+                </ul>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-8xl shadow-xl">
+                  🏰
                 </div>
               </div>
             </div>
 
             {/* Tiny Town */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-4 border-[#FF6B9D]">
-              <div className="h-48 bg-gradient-to-br from-[#FF6B9D] to-[#9B5DE5] flex items-center justify-center">
-                <span className="text-7xl">🧸</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-[#FF6B9D]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  👶 Tiny Town – Just for Toddlers
-                </h3>
-                <p className="text-gray-600">
-                  Designed for your littles (2-4 years old), Tiny Town is a soft toddler zone filled with smaller bounce houses, a giant corn box, and sandbox stocked with Tonka trucks and buckets for building, digging, and pretending. Safe, shaded, and just their size!
-                </p>
-                <div className="mt-4 inline-block px-3 py-1 bg-[#FF6B9D]/10 text-[#FF6B9D] text-sm font-semibold rounded-full">
-                  🎟️ Requires Activity Ticket
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-8xl shadow-xl">
+                  🧸
                 </div>
               </div>
-            </div>
-
-            {/* Firefly Express */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-4 border-[#00BBF9]">
-              <div className="h-48 bg-gradient-to-br from-[#00BBF9] to-[#00F5D4] flex items-center justify-center">
-                <Train className="w-24 h-24 text-white" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-[#00BBF9]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🚂 Firefly Express Train
-                </h3>
-                <p className="text-gray-600">
-                  All aboard the Firefly Express! This whimsical, trackless train ride loops through the event and is the perfect break between bounce sessions. Great for toddlers, little adventurers, and tired feet of all ages!
-                </p>
-                <div className="mt-4 inline-block px-3 py-1 bg-[#00BBF9]/10 text-[#00BBF9] text-sm font-semibold rounded-full">
-                  🎟️ Requires Activity Ticket
+              <div>
+                <div className="inline-block px-3 py-1 bg-purple-100 text-purple-600 text-sm font-medium rounded-full mb-4">
+                  Requires Activity Ticket
                 </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  Tiny Town — Ages 2-4
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  A dedicated soft-play zone designed just for your littlest ones. Featuring mini bounce houses, a giant corn box, and a Tonka truck sandbox — safe, shaded, and perfectly sized.
+                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center gap-2"><span className="text-purple-500">•</span> Soft, safe play structures</li>
+                  <li className="flex items-center gap-2"><span className="text-purple-500">•</span> Sensory sandbox play</li>
+                  <li className="flex items-center gap-2"><span className="text-purple-500">•</span> Fully shaded & enclosed</li>
+                </ul>
               </div>
             </div>
 
             {/* Touch-a-Truck */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-4 border-[#9B5DE5]">
-              <div className="h-48 bg-gradient-to-br from-[#9B5DE5] to-[#FF6B9D] flex items-center justify-center">
-                <Truck className="w-24 h-24 text-white" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-[#9B5DE5]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🚒 Touch-a-Truck Zone
-                </h3>
-                <p className="text-gray-600">
-                  Climb inside real-life rescue, service, and construction vehicles—and meet the everyday heroes who drive them! Honk the horns, flash the lights, and explore everything from fire engines to bulldozers.
-                </p>
-                <div className="mt-4 inline-block px-3 py-1 bg-[#9B5DE5]/10 text-[#9B5DE5] text-sm font-semibold rounded-full">
-                  ✨ FREE - Open to All
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="inline-block px-3 py-1 bg-green-100 text-green-600 text-sm font-medium rounded-full mb-4">
+                  Free — Open to All
                 </div>
-              </div>
-            </div>
-
-            {/* Creation Stations */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-4 border-[#00F5D4]">
-              <div className="h-48 bg-gradient-to-br from-[#00F5D4] to-[#00BBF9] flex items-center justify-center">
-                <Palette className="w-24 h-24 text-white" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-[#00A896]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🎨 Creation Stations
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  Touch-a-Truck Zone
                 </h3>
-                <p className="text-gray-600 mb-3">
-                  Hands-on, screen-free creativity awaits! Kids of all ages can design, decorate, and take home their own colorful projects.
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Climb inside real fire engines, police cars, construction equipment, and more. Meet the heroes who drive them, honk the horns, and create memories that last.
                 </p>
-                <ul className="text-sm text-gray-500 space-y-1">
-                  <li>🪁 Sky High Flyers - Decorate your own kite!</li>
-                  <li>✨ Glow & Go Streamers</li>
-                  <li>🌬️ Breeze Catchers - Colorful windsocks</li>
-                  <li>🎩 Hat-tastic Creations</li>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center gap-2"><span className="text-green-500">•</span> Fire trucks & ambulances</li>
+                  <li className="flex items-center gap-2"><span className="text-green-500">•</span> Construction vehicles</li>
+                  <li className="flex items-center gap-2"><span className="text-green-500">•</span> Meet local first responders</li>
                 </ul>
-                <div className="mt-4 inline-block px-3 py-1 bg-[#00F5D4]/10 text-[#00A896] text-sm font-semibold rounded-full">
-                  🎟️ Requires Activity Ticket
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-8xl shadow-xl">
+                  🚒
                 </div>
               </div>
             </div>
 
-            {/* Character Meet & Greet */}
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-4 border-[#FFD93D]">
-              <div className="h-48 bg-gradient-to-br from-[#FFD93D] to-[#FF8C42] flex items-center justify-center">
-                <Users className="w-24 h-24 text-white" />
+            {/* Live Entertainment */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-violet-400 to-indigo-500 flex items-center justify-center text-8xl shadow-xl">
+                  🎪
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-[#FF8C42]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  👸 Character Meet & Greet
+              <div>
+                <div className="inline-block px-3 py-1 bg-violet-100 text-violet-600 text-sm font-medium rounded-full mb-4">
+                  Free — Open to All
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  Main Stage Entertainment
                 </h3>
-                <p className="text-gray-600 mb-3">
-                  Snap a picture, share a hug, or high-five your favorite characters! Princesses, superheroes, cartoon icons, and more will rotate throughout the day.
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Non-stop family entertainment all day on our main stage. From dazzling magic shows to live music, there's always something happening.
                 </p>
-                <p className="text-xs text-gray-500">
-                  Elsa, Anna, Belle • Spiderman, Mario & Luigi • Bluey, Mickey & Minnie • Plus stilt walkers, jugglers & acrobats!
-                </p>
-                <div className="mt-4 inline-block px-3 py-1 bg-[#FFD93D]/10 text-[#FF8C42] text-sm font-semibold rounded-full">
-                  ✨ FREE - Open to All
-                </div>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Magic shows & acrobats</li>
+                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Live music & dance</li>
+                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Reptile & bird encounters</li>
+                </ul>
               </div>
             </div>
 
@@ -251,148 +278,100 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Food & Entertainment Section */}
-      <section className="py-20 section-cream">
+      {/* More Activities Grid */}
+      <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-            {/* Munchyard */}
-            <div className="bg-white rounded-3xl shadow-xl p-8 border-4 border-[#FF8C42]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#FF8C42] to-[#FFD93D] rounded-2xl flex items-center justify-center">
-                  <UtensilsCrossed className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-[#FF8C42]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🍔 The Munchyard
-                </h3>
-              </div>
-              <p className="text-gray-600 text-lg mb-4">
-                Fuel your fun at our outdoor food truck roundup, offering a tasty mix of savory meals and sweet desserts.
-              </p>
-              <p className="text-gray-500">
-                Whether you're craving BBQ, tacos, grilled cheese, or gourmet treats, there's something for every appetite!
-              </p>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Plus So Much More
+            </h2>
+          </div>
 
-            {/* Live Shows */}
-            <div className="bg-white rounded-3xl shadow-xl p-8 border-4 border-[#9B5DE5]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#9B5DE5] to-[#FF6B9D] rounded-2xl flex items-center justify-center">
-                  <Music className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-[#9B5DE5]" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🎤 Live Shows All Day
-                </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: '🚂', title: 'Firefly Express', desc: 'Trackless train ride through the festival', tag: 'Ticket' },
+              { icon: '🎨', title: 'Craft Stations', desc: 'Kites, windsocks, hats & more to create', tag: 'Ticket' },
+              { icon: '🎭', title: 'Face Painting', desc: 'Professional artists, endless designs', tag: 'Ticket' },
+              { icon: '🎈', title: 'Balloon Artists', desc: 'Custom creations for every kid', tag: 'Ticket' },
+              { icon: '👸', title: 'Character Meet & Greet', desc: 'Princesses, superheroes & more', tag: 'Free' },
+              { icon: '🍔', title: 'Food Truck Village', desc: 'Local favorites & sweet treats', tag: 'Free' },
+              { icon: '🎀', title: 'Grand Opening', desc: 'Ribbon cutting with local leaders', tag: 'Free' },
+              { icon: '🏆', title: 'Raffles & Prizes', desc: 'Win big throughout the day', tag: 'Free' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 mb-3">{item.desc}</p>
+                <span className={`text-xs font-medium px-2 py-1 rounded-full ${
+                  item.tag === 'Free' ? 'bg-green-100 text-green-600' : 'bg-amber-100 text-amber-600'
+                }`}>
+                  {item.tag === 'Free' ? '✓ Free' : '🎟️ Ticket'}
+                </span>
               </div>
-              <p className="text-gray-600 text-lg mb-4">
-                Don't miss the excitement on our main stage! Family-friendly entertainment will keep the energy high all day long.
-              </p>
-              <ul className="text-gray-500 space-y-2">
-                <li>✨ Dazzling magic shows</li>
-                <li>🦎 Wild reptile and bird encounters</li>
-                <li>🎪 Jugglers, acrobats, bubble performers</li>
-                <li>🎵 Music and dance performances</li>
-                <li>🧊 Ice sculpting demonstrations</li>
-              </ul>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Chalk Art & Grand Opening */}
-      <section className="py-20 section-gradient text-white">
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
-            
-            {/* Chalk Art */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B9D] to-[#FFD93D] rounded-2xl flex items-center justify-center">
-                  <Sparkles className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🎨 Chalk Art Contest
-                </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { num: '8+', label: 'Hours of Fun' },
+              { num: '20+', label: 'Activities' },
+              { num: '10+', label: 'Food Trucks' },
+              { num: '1000s', label: 'Expected Guests' },
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2">{stat.num}</div>
+                <div className="text-white/60">{stat.label}</div>
               </div>
-              <p className="text-white/90 text-lg mb-4">
-                Families are invited to grab a square and create their own masterpiece!
-              </p>
-              <p className="text-white/70">
-                Every family who participates will be entered into a grand prize drawing — and your colorful creations will be displayed throughout the event.
-              </p>
-            </div>
-
-            {/* Grand Opening */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#FFD93D] to-[#FF8C42] rounded-2xl flex items-center justify-center">
-                  <Scissors className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                  🎀 Grand Opening Ceremony
-                </h3>
-              </div>
-              <p className="text-white/90 text-lg mb-4">
-                Join us as we officially open the Firefly community with a special ribbon-cutting!
-              </p>
-              <p className="text-white/70">
-                Remarks from local leaders and a sneak peek into the future of Active Family living at Firefly.
-              </p>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-24 section-light">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-            <span className="gradient-text">Don't Miss Out!</span>
+      {/* Final CTA */}
+      <section id="register" className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Ready for the Best Day Ever?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Register now to get your FREE activity tickets, punch passes, and treat coupons. Walk-ins welcome, but registered guests get all the perks!
+          <p className="text-xl text-gray-600 mb-10">
+            Register now to secure your free activity tickets, exclusive coupons, and priority entry. It only takes 30 seconds.
           </p>
           <button 
             onClick={() => setShowModal(true)}
-            className="px-10 py-5 bg-gradient-to-r from-[#FFD93D] via-[#FF8C42] to-[#FF6B9D] text-white font-bold text-xl rounded-full shadow-xl hover:scale-105 transition-all pulse-glow"
+            className="bg-gradient-to-r from-amber-400 to-orange-500 text-gray-900 px-10 py-5 rounded-full text-xl font-bold transition-all hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25"
           >
-            🎉 Register FREE Now
+            Register Free Now
           </button>
-          
-          <div className="mt-12 flex flex-wrap justify-center gap-6 text-gray-500">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-[#FF8C42]" />
-              <span>Saturday, May 9, 2026</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-[#FF6B9D]" />
-              <span>Eagle Mountain, Utah</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-[#00BBF9]" />
-              <span>10 AM - 6 PM</span>
-            </div>
-          </div>
+          <p className="mt-6 text-gray-500 text-sm">
+            Saturday, May 9, 2026 • 10 AM – 6 PM • Eagle Mountain, Utah
+          </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-[#1A1A2E] text-white/60 text-center text-sm">
+      <footer className="py-12 bg-slate-900 text-white/60">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="mb-2" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-            <span className="gradient-text font-bold text-lg">Firefly Fam Fest 2026</span>
-          </p>
-          <p>A Candlelight Homes Community Event • Eagle Mountain, Utah</p>
-          <p className="mt-4 text-white/40">© 2026 Firefly Community. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="font-bold text-xl text-white">
+              <span className="text-amber-400">Firefly</span> Fam Fest
+            </div>
+            <p className="text-sm text-center md:text-left">
+              A <a href="https://www.candlelighthomes.com/firefly-vision" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Candlelight Homes</a> Community Event
+            </p>
+            <p className="text-sm">© 2026 Firefly Community</p>
+          </div>
         </div>
       </footer>
 
       {/* Registration Modal */}
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative animate-in fade-in zoom-in duration-300">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative">
             <button 
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
@@ -401,11 +380,11 @@ export default function HomePage() {
             </button>
             
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold gradient-text mb-2" style={{ fontFamily: "'Fredoka', sans-serif" }}>
-                Register for FREE!
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Register Your Family
               </h3>
               <p className="text-gray-600 text-sm">
-                Get 5 free activity tickets, punch passes, and treat coupons!
+                Get 5 free activity tickets + exclusive perks
               </p>
             </div>
 
@@ -415,7 +394,7 @@ export default function HomePage() {
                 <input 
                   type="text" 
                   placeholder="Your name"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#FF8C42] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-100 focus:outline-none transition-all"
                 />
               </div>
               <div>
@@ -423,7 +402,7 @@ export default function HomePage() {
                 <input 
                   type="email" 
                   placeholder="you@email.com"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#FF8C42] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-100 focus:outline-none transition-all"
                 />
               </div>
               <div>
@@ -431,15 +410,15 @@ export default function HomePage() {
                 <input 
                   type="tel" 
                   placeholder="(555) 123-4567"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#FF8C42] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-100 focus:outline-none transition-all"
                 />
               </div>
               
               <button 
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-[#FFD93D] via-[#FF8C42] to-[#FF6B9D] text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
+                className="w-full py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-gray-900 font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-[1.02]"
               >
-                🎉 Complete Registration
+                Complete Registration
               </button>
             </form>
 
