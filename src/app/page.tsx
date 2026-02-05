@@ -40,7 +40,26 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
-        <div className="absolute inset-0 confetti-heavy opacity-40" />
+        <div className="absolute inset-0 confetti-heavy opacity-30" />
+        
+        {/* Animated falling confetti */}
+        <div className="confetti-animated">
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+          <div className="confetti-piece" />
+        </div>
         
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl" />
