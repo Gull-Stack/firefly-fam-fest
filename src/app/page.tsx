@@ -39,9 +39,15 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className={`font-bold text-2xl transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>
-            <span className="text-amber-400">Firefly</span> Fam Fest
-          </div>
+          <a href="#" className="flex-shrink-0">
+            <Image
+              src="/images/logo.jpg"
+              alt="Firefly Fam Fest"
+              width={60}
+              height={60}
+              className="h-12 w-auto"
+            />
+          </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className={`text-sm font-medium transition-colors hover:text-amber-400 ${scrolled ? 'text-gray-600' : 'text-white/80'}`}>About</a>
             <a href="#attractions" className={`text-sm font-medium transition-colors hover:text-amber-400 ${scrolled ? 'text-gray-600' : 'text-white/80'}`}>Attractions</a>
