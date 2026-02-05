@@ -40,7 +40,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
-        <div className="absolute inset-0 bg-[url('/hero-pattern.svg')] opacity-10" />
+        <div className="absolute inset-0 confetti-heavy opacity-40" />
         
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl" />
@@ -104,8 +104,9 @@ export default function HomePage() {
       </section>
 
       {/* Why Register Section */}
-      <section id="about" className="py-24 bg-gradient-to-b from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="about" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 confetti-medium opacity-20" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">Free Registration</span>
@@ -159,8 +160,9 @@ export default function HomePage() {
       </section>
 
       {/* Attractions Section */}
-      <section id="attractions" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="attractions" className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 confetti-light opacity-30" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">All-Day Entertainment</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mt-3 mb-4">
@@ -299,8 +301,9 @@ export default function HomePage() {
       </section>
 
       {/* More Activities Grid */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="absolute inset-0 confetti-light opacity-20" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif mb-4">
               Plus So Much More
@@ -349,8 +352,9 @@ export default function HomePage() {
       </section>
 
       {/* Festival Map Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 confetti-light opacity-15" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">Plan Your Day</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif mt-3 mb-4">
