@@ -542,29 +542,17 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* 
-              ==========================================
-              LUMA EMBED GOES HERE
-              ==========================================
-              Once Ranee creates the Luma event, replace 
-              this placeholder with the Luma embed code:
-              
-              <iframe 
-                src="https://lu.ma/embed/event/YOUR-EVENT-ID"
-                width="100%" 
-                height="450"
-                frameBorder="0"
-                style={{ borderRadius: '12px' }}
-                allowFullScreen
-              />
-              ==========================================
-            */}
-            
-            {/* Temporary placeholder form - remove when Luma is ready */}
-            <div className="border-2 border-dashed border-amber-300 rounded-xl p-6 bg-amber-50 text-center">
-              <p className="text-amber-700 font-medium mb-2">🎟️ Registration Coming Soon!</p>
-              <p className="text-amber-600 text-sm">Luma registration will be embedded here once the event is created.</p>
-            </div>
+            {/* Luma Registration Embed */}
+            <iframe 
+              src="https://luma.com/embed/event/evt-wSH7R185vaXhneD/simple"
+              width="100%"
+              height="450"
+              frameBorder="0"
+              style={{ border: '1px solid #bfcbda88', borderRadius: '12px' }}
+              allow="fullscreen; payment"
+              aria-hidden="false"
+              tabIndex={0}
+            />
 
             <p className="text-xs text-gray-400 text-center mt-4">
               By registering, you agree to receive event updates via email and SMS.
