@@ -51,6 +51,7 @@ export default function HomePage() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#about" className={`text-base font-semibold transition-colors hover:text-cyan-400 ${scrolled ? 'text-gray-600' : 'text-white/90'}`}>About</a>
             <a href="#attractions" className={`text-base font-semibold transition-colors hover:text-cyan-400 ${scrolled ? 'text-gray-600' : 'text-white/90'}`}>Attractions</a>
+            <a href="#faq" className={`text-base font-semibold transition-colors hover:text-cyan-400 ${scrolled ? 'text-gray-600' : 'text-white/90'}`}>FAQ</a>
             <a href="#register" className={`text-base font-semibold transition-colors hover:text-cyan-400 ${scrolled ? 'text-gray-600' : 'text-white/90'}`}>Register</a>
           </div>
           <button 
@@ -331,19 +332,91 @@ export default function HomePage() {
                   Free — Open to All
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 font-serif mb-4">
-                  Main Stage Entertainment
+                  Live Shows All Day
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Non-stop family entertainment all day on our main stage. From dazzling magic shows to live music, there's always something happening.
+                  Non-stop family entertainment all day on our main stage. From dazzling magic shows to incredible acrobats and jugglers, there's always something amazing happening.
                 </p>
                 <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Magic shows & acrobats</li>
-                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Live music & dance</li>
-                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Reptile & bird encounters</li>
+                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Magic shows & acrobatic performers</li>
+                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Professional jugglers & stilt walkers</li>
+                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Reptile & exotic animal encounters</li>
+                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Live music & family singalongs</li>
                 </ul>
               </div>
             </div>
 
+            {/* Creation Stations */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1 scroll-reveal-left">
+                <div className="inline-block px-3 py-1 bg-pink-100 text-pink-600 text-sm font-medium rounded-full mb-4">
+                  Requires Activity Ticket
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 font-serif mb-4">
+                  Creation Stations
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Let creativity soar at our hands-on craft zones! Kids can build, design, and take home their own masterpieces. Complete your craft punch pass for a chance to win a family getaway!
+                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Sky High Flyers — design your own kite</li>
+                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Glow & Go Streamers — colorful ribbon wands</li>
+                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Breeze Catchers — wind-spinning windsocks</li>
+                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Hat-tastic Creations — decorate your own hat</li>
+                </ul>
+              </div>
+              <div className="order-1 lg:order-2 scroll-reveal-right">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
+                  <Image
+                    src="/images/crafts-for-kids.png"
+                    alt="Kids creation stations and crafts"
+                    fill
+                    className="object-cover ken-burns group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Grand Opening Ceremony */}
+      <section className="py-24 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 relative overflow-hidden">
+        <div className="absolute inset-0 confetti-medium opacity-30" />
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <div className="text-center">
+            <div className="inline-block px-4 py-2 bg-amber-400/20 rounded-full mb-6">
+              <span className="text-amber-600 font-semibold text-sm tracking-wide uppercase">✨ Special Event</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mb-6">
+              Grand Opening Ceremony
+            </h2>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                Join us as we officially open the Firefly community with a special ribbon-cutting, 
+                remarks from local leaders, and a sneak peek into the future of Active Family living at Firefly.
+              </p>
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-amber-200/50">
+                <div className="grid md:grid-cols-3 gap-6 text-center">
+                  <div>
+                    <div className="text-3xl mb-2">✂️</div>
+                    <h3 className="font-bold text-gray-900 mb-1">Ribbon Cutting</h3>
+                    <p className="text-gray-600 text-sm">Official community opening</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl mb-2">🎤</div>
+                    <h3 className="font-bold text-gray-900 mb-1">Local Leaders</h3>
+                    <p className="text-gray-600 text-sm">Special remarks & welcome</p>
+                  </div>
+                  <div>
+                    <div className="text-3xl mb-2">🏡</div>
+                    <h3 className="font-bold text-gray-900 mb-1">Sneak Peek</h3>
+                    <p className="text-gray-600 text-sm">Future of Active Family living</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -360,23 +433,34 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { image: '/images/crafts-for-kids.png', title: 'Craft Stations', desc: 'Kites, windsocks, hats & more to create', tag: 'Ticket' },
-              { image: '/images/face-painting.png', title: 'Face Painting', desc: 'Professional artists, endless designs', tag: 'Ticket' },
+              { image: '/images/face-painting.mp4', title: 'Face Painting', desc: 'Professional artists, endless designs', tag: 'Ticket', isVideo: true },
               { image: '/images/balloon-art.png', title: 'Balloon Artists', desc: 'Custom creations for every kid', tag: 'Ticket' },
-              { image: '/images/performers.png', title: 'Character Meet & Greet', desc: 'Princesses, superheroes & more', tag: 'Free' },
+              { image: '/images/performers.png', title: 'Character Meet & Greet', desc: 'Elsa, Anna, Belle, Spiderman, Mario, Bluey & more!', tag: 'Free' },
+              { image: '/images/train-rides.jpg', title: '🚂 Firefly Express', desc: 'Trackless train ride through the festival grounds', tag: 'Ticket' },
+              { image: '/images/touch-a-truck.jpg', title: '🚒 Big Truck Corral', desc: 'Touch-a-Truck zone + punch card for Giant Tonka raffle!', tag: 'Free' },
               { image: '/images/music-singalongs.png', title: 'Music & Singalongs', desc: 'Family-friendly tunes all day', tag: 'Free' },
               { image: '/images/prizes-raffles.png', title: '🏆 Grand Prizes', desc: 'Craft pass → Family Getaway! Truck pass → Giant Tonka Set!', tag: 'Free' },
-              { image: '/images/train-rides.jpg', title: '🚂 Firefly Express', desc: 'Trackless train ride through the festival grounds', tag: 'Ticket' },
-              { image: '/images/touch-a-truck.jpg', title: '🚒 Touch-a-Truck', desc: 'Climb real vehicles + complete punch card for Tonka raffle!', tag: 'Free' },
+              { image: '/images/crafts-for-kids.png', title: 'Punch Card Fun', desc: 'Complete activities to enter prize drawings!', tag: 'Free' },
             ].map((item, i) => (
               <div key={i} className={`scroll-reveal stagger-${i + 1} bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group`}>
                 <div className="aspect-[4/3] relative overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  {item.isVideo ? (
+                    <video
+                      src={item.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  )}
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -500,6 +584,77 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="absolute inset-0 confetti-light opacity-15" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">Questions?</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mt-3 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Everything you need to know before you go!
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: 'Is the event free?',
+                a: 'Yes! Registration is completely free. When you register, you\'ll receive 5 free activity tickets for bounce houses, train rides, and craft stations, plus exclusive punch cards for prize entries.'
+              },
+              {
+                q: 'Where is the event located?',
+                a: 'Firefly Fam Fest is held at the Firefly Community in Eagle Mountain, Utah. Full address and directions will be sent to registered attendees.'
+              },
+              {
+                q: 'What time does it start and end?',
+                a: 'The festival runs from 11 AM to 8 PM on Saturday, May 9, 2026. Come for an hour or stay all day — there\'s always something happening!'
+              },
+              {
+                q: 'Is parking free?',
+                a: 'Yes, parking is free! We have dedicated parking areas with easy access to the festival grounds.'
+              },
+              {
+                q: 'Are there activities for toddlers?',
+                a: 'Absolutely! Tiny Town is a dedicated soft-play zone designed specifically for ages 2-4, featuring mini bounce houses, a giant corn box, and a Tonka truck sandbox — all shaded and safe.'
+              },
+              {
+                q: 'Can I bring outside food and drinks?',
+                a: 'Small snacks and water bottles are welcome, but we encourage you to explore The Munchyard with 10+ amazing food trucks offering everything from BBQ to gourmet treats!'
+              },
+              {
+                q: 'Do I need to register in advance?',
+                a: 'Walk-ins are welcome, but registered families get free activity tickets, craft punch passes, and priority entry — so we highly recommend registering ahead of time!'
+              },
+              {
+                q: 'What should I bring?',
+                a: 'Comfortable shoes, sunscreen, and your camera! We\'ll have shaded rest areas throughout the venue, but it\'s always good to be prepared for a full day of outdoor fun.'
+              }
+            ].map((faq, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-start gap-3">
+                  <span className="text-amber-500 text-xl">Q:</span>
+                  {faq.q}
+                </h3>
+                <p className="text-gray-600 pl-8">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-500 mb-4">Still have questions?</p>
+            <a 
+              href="mailto:info@fireflycommunityfest.com"
+              className="text-amber-600 hover:text-amber-700 font-semibold"
+            >
+              Contact us at info@fireflycommunityfest.com
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 bg-slate-900 text-white/60">
         <div className="max-w-7xl mx-auto px-6">
@@ -546,17 +701,19 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Luma Registration Embed */}
-            <iframe 
-              src="https://luma.com/embed/event/evt-wSH7R185vaXhneD/simple"
-              width="100%"
-              height="550"
-              frameBorder="0"
-              style={{ border: '1px solid #bfcbda88', borderRadius: '12px' }}
-              allow="fullscreen; payment"
-              aria-hidden="false"
-              tabIndex={0}
-            />
+            {/* Luma Registration Embed - wrapper hides cover image */}
+            <div className="relative overflow-hidden rounded-xl" style={{ height: '450px' }}>
+              <iframe 
+                src="https://luma.com/embed/checkout/evt-wSH7R185vaXhneD"
+                width="100%"
+                height="550"
+                frameBorder="0"
+                style={{ border: 'none', marginTop: '-100px' }}
+                allow="fullscreen; payment"
+                aria-hidden="false"
+                tabIndex={0}
+              />
+            </div>
 
             <p className="text-xs text-gray-400 text-center mt-4">
               By registering, you agree to receive event updates via email and SMS.
