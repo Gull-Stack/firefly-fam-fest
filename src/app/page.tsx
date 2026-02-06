@@ -94,7 +94,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left side - Text content */}
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif mb-6 leading-[1.1]">
                 Utah's Premier<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-pink-500 to-cyan-400">
                   Festival for Families
@@ -187,14 +187,13 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-amber-100 to-orange-100 p-8">
-                <div className="w-full h-full rounded-2xl bg-white shadow-2xl flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-6xl mb-4">🎟️</div>
-                    <p className="text-2xl font-bold text-gray-900 mb-2">Your Free Pass</p>
-                    <p className="text-gray-500">5 Activity Tickets + Perks</p>
-                  </div>
-                </div>
+              <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/family-pass.jpg"
+                  alt="Family Registration Pass"
+                  fill
+                  className="object-cover"
+                />
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-200 rounded-2xl -z-10" />
