@@ -434,13 +434,13 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { image: '/images/face-painting.mp4', title: 'Face Painting', desc: 'Professional artists, endless designs', tag: 'Ticket', isVideo: true, wordOverlay: '/images/word-face-painting.png' },
-              { image: '/images/balloon-art.png', title: 'Balloon Artists', desc: 'Custom creations for every kid', tag: 'Ticket' },
-              { image: '/images/performers.png', title: 'Character Meet & Greet', desc: 'Elsa, Anna, Belle, Spiderman, Mario, Bluey & more!', tag: 'Free' },
-              { image: '/images/train-rides.jpg', title: '🚂 Firefly Express', desc: 'Trackless train ride through the festival grounds', tag: 'Ticket' },
+              { image: '/images/bg-balloon-art.mp4', title: 'Balloon Artists', desc: 'Custom creations for every kid', tag: 'Ticket', isVideo: true, wordOverlay: '/images/word-balloon-art.png' },
+              { image: '/images/bg-performers.mp4', title: 'Character Meet & Greet', desc: 'Elsa, Anna, Belle, Spiderman, Mario, Bluey & more!', tag: 'Free', isVideo: true, wordOverlay: '/images/word-performers.png' },
+              { image: '/images/bg-train-rides.mp4', title: '🚂 Firefly Express', desc: 'Trackless train ride through the festival grounds', tag: 'Ticket', isVideo: true },
               { image: '/images/fire-truck.mp4', title: '🚒 Big Truck Corral', desc: 'Touch-a-Truck zone + punch card for Giant Tonka raffle!', tag: 'Free', isVideo: true, wordOverlay: '/images/word-touch-a-truck.png' },
-              { image: '/images/music-singalongs.png', title: 'Music & Singalongs', desc: 'Family-friendly tunes all day', tag: 'Free' },
-              { image: '/images/prizes-raffles.png', title: '🏆 Grand Prizes', desc: 'Craft pass → Family Getaway! Truck pass → Giant Tonka Set!', tag: 'Free' },
-              { image: '/images/crafts-for-kids.png', title: 'Punch Card Fun', desc: 'Complete activities to enter prize drawings!', tag: 'Free' },
+              { image: '/images/bg-music-singalongs.mp4', title: 'Music & Singalongs', desc: 'Family-friendly tunes all day', tag: 'Free', isVideo: true, wordOverlay: '/images/word-music-singalongs.png' },
+              { image: '/images/bg-prizes-and-raffles.mp4', title: '🏆 Grand Prizes', desc: 'Craft pass → Family Getaway! Truck pass → Giant Tonka Set!', tag: 'Free', isVideo: true, wordOverlay: '/images/word-prizes-raffles.png' },
+              { image: '/images/bg-crafts-for-kids.mp4', title: 'Punch Card Fun', desc: 'Complete activities to enter prize drawings!', tag: 'Free', isVideo: true, wordOverlay: '/images/word-crafts-for-kids.png' },
             ].map((item, i) => (
               <div key={i} className={`scroll-reveal stagger-${i + 1} bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group`}>
                 <div className="aspect-[4/3] relative overflow-hidden">
