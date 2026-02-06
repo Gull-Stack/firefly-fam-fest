@@ -304,7 +304,7 @@ export default function HomePage() {
               <div className="order-1 lg:order-2 scroll-reveal-right">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
                   <video
-                    src="/images/food-village.mp4"
+                    src="/images/food-trucks.mp4"
                     autoPlay
                     loop
                     muted
