@@ -746,16 +746,19 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Luma Checkout Button */}
+            {/* Luma Registration Embed */}
             <div className="flex justify-center">
-              <a
-                href="https://luma.com/event/evt-wSH7R185vaXhneD"
-                className="luma-checkout--button inline-block bg-amber-400 hover:bg-amber-500 text-gray-900 px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105"
-                data-luma-action="checkout"
-                data-luma-event-id="evt-wSH7R185vaXhneD"
-              >
-                Register for Event
-              </a>
+              <iframe
+                src="https://luma.com/embed/event/evt-wSH7R185vaXhneD/simple"
+                width="600"
+                height="450"
+                frameBorder="0"
+                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+                allow="fullscreen; payment"
+                aria-hidden="false"
+                tabIndex={0}
+                className="w-full max-w-[600px]"
+              />
             </div>
 
             <p className="text-xs text-gray-400 text-center mt-4">
