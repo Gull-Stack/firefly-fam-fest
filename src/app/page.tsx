@@ -43,7 +43,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#" className="flex-shrink-0">
             <Image
-              src="/images/logo.png"
+              src={`${BASE}/images/logo.png`}
               alt="Firefly Fam Fest"
               width={60}
               height={60}
@@ -70,7 +70,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-aerial.jpg"
+            src={`${BASE}/images/hero-aerial.jpg`}
             alt="Firefly Community Aerial View"
             fill
             className="object-cover"
@@ -134,7 +134,7 @@ export default function HomePage() {
             {/* Right side - BIG Logo */}
             <div className="hidden lg:flex justify-center items-center">
               <Image
-                src="/images/logo.png"
+                src={`${BASE}/images/logo.png`}
                 alt="Firefly Fam Fest"
                 width={600}
                 height={660}
@@ -191,7 +191,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/family-pass.jpg"
+                  src={`${BASE}/images/family-pass.jpg`}
                   alt="Family Registration Pass"
                   fill
                   className="object-cover"
@@ -250,7 +250,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Image src="/images/word-bounce-house.png" alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
+                    <Image src={`${BASE}/images/word-bounce-house.png`} alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
                   </div>
                 </div>
               </div>
@@ -268,7 +268,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Image src="/images/word-tiny-town.png" alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
+                    <Image src={`${BASE}/images/word-tiny-town.png`} alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
                   </div>
                 </div>
               </div>
@@ -318,7 +318,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Image src="/images/word-food-trucks.png" alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
+                    <Image src={`${BASE}/images/word-food-trucks.png`} alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
                   </div>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Image src="/images/word-entertainment.png" alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
+                    <Image src={`${BASE}/images/word-entertainment.png`} alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
                   </div>
                 </div>
               </div>
@@ -388,7 +388,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Image src="/images/word-crafts-for-kids.png" alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
+                    <Image src={`${BASE}/images/word-crafts-for-kids.png`} alt="" width={300} height={150} unoptimized className="w-2/3 h-auto drop-shadow-lg" />
                   </div>
                 </div>
               </div>
@@ -522,7 +522,7 @@ export default function HomePage() {
           
           <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
             <Image
-              src="/images/event-map.jpg"
+              src={`${BASE}/images/event-map.jpg`}
               alt="Firefly Fam Fest Event Map"
               width={1400}
               height={1000}
@@ -705,7 +705,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6">
             <Image
-              src="/images/logo.png"
+              src={`${BASE}/images/logo.png`}
               alt="Firefly Fam Fest"
               width={100}
               height={110}
@@ -732,7 +732,7 @@ export default function HomePage() {
             
             <div className="text-center mb-6">
               <Image
-                src="/images/logo.png"
+                src={`${BASE}/images/logo.png`}
                 alt="Firefly Fam Fest"
                 width={120}
                 height={130}
