@@ -40,12 +40,12 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="#" className="flex-shrink-0">
-            <img src={`${BASE}/images/logo.png`}
-              alt="Firefly Fam Fest"
-              width={60}
-              height={60}
-              className="h-14 w-auto"
+          <a href="https://www.candlelighthomes.com/firefly-vision" className="flex-shrink-0" target="_blank" rel="noopener noreferrer">
+            <img src={`${BASE}/images/candlelight-logo.svg`}
+              alt="Candlelight Homes"
+              width={180}
+              height={40}
+              className="h-10 w-auto"
             />
           </a>
           <div className="hidden md:flex items-center gap-8">
@@ -69,7 +69,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <img src={`${BASE}/images/hero-aerial.jpg`}
             alt="Firefly Community Aerial View"
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
         {/* Gradient Overlay */}
@@ -89,17 +89,27 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left side - Text content */}
+            {/* Left side - Firefly Logo */}
+            <div className="hidden lg:flex justify-center items-center">
+              <img src={`${BASE}/images/logo.png`}
+                alt="Firefly Fam Fest"
+                width={600}
+                height={660}
+                className="w-full max-w-lg h-auto drop-shadow-2xl"
+              />
+            </div>
+
+            {/* Right side - Text content */}
             <div className="text-center lg:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif mb-6 leading-[1.1]">
-                Utah's Premier<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-pink-500 to-cyan-400">
+                Utah’s Premier<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC72C] via-[#00BFFF] to-[#FFC72C]">
                   Festival for Families
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-white/70 mb-8 max-w-xl leading-relaxed">
-                An unforgettable day of wonder, play, and togetherness at Eagle Mountain's newest community.
+                An unforgettable day of wonder, play, and togetherness at Eagle Mountain’s newest community.
               </p>
               
               {/* BIG Date & Time */}
@@ -109,13 +119,19 @@ export default function HomePage() {
                 <p className="text-lg md:text-xl text-white/80 mt-2">📍 Eagle Mountain, Utah</p>
               </div>
 
+              {/* $35 Value Badge */}
+              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-2 mb-6">
+                <span className="text-amber-400 font-bold text-lg">$35 Value</span>
+                <span className="text-white/70 text-sm">— FREE when you register</span>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
             <button 
               onClick={() => setShowModal(true)}
               className="group bg-gradient-to-r from-amber-400 to-orange-500 text-gray-900 px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25 flex items-center justify-center gap-2"
             >
               <Ticket className="w-5 h-5" />
-              Register Free
+              Free Access — Sign Up for Text Updates
             </button>
             <a 
               href="#attractions"
@@ -126,13 +142,13 @@ export default function HomePage() {
               </div>
             </div>
             
-            {/* Right side - BIG Logo */}
-            <div className="hidden lg:flex justify-center items-center">
+            {/* Firefly logo for mobile (shows below text on small screens) */}
+            <div className="lg:hidden flex justify-center mt-8">
               <img src={`${BASE}/images/logo.png`}
                 alt="Firefly Fam Fest"
-                width={600}
-                height={660}
-                className="w-full max-w-lg h-auto drop-shadow-2xl"
+                width={300}
+                height={330}
+                className="w-64 h-auto drop-shadow-2xl"
               />
             </div>
           </div>
@@ -160,10 +176,12 @@ export default function HomePage() {
               
               <div className="space-y-4">
                 {[
-                  '5 free activity tickets (bounce houses, train, crafts)',
-                  '🎨 Craft punch pass — visit every station, enter to win a FAMILY GETAWAY!',
-                  '🚚 Touch-a-Truck punch card — explore all vehicles, win GIANT TONKA TRUCKS!',
-                  'Priority entry — skip the registration line'
+                  '🎟️ 5 tear-off activity tickets (train ride, bounce house & more)',
+                  '🍭 Free coupons — sucker, face painting & balloon art',
+                  '🎨 Creation Station punch pass — complete all crafts to win a FREE trip to Disneyland!',
+                  '🚚 Touch-a-Truck punch card — visit every vehicle to win $1,000 giveaway (every hour!)',
+                  '🍟 Free Sodalicious/Churro Fries courtesy of our partners',
+                  '⚡ Priority entry — skip the registration line'
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -178,7 +196,7 @@ export default function HomePage() {
                 onClick={() => setShowModal(true)}
                 className="mt-10 bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105"
               >
-                Register Your Family
+                Get Your Free Access Pass
               </button>
             </div>
 
@@ -207,7 +225,7 @@ export default function HomePage() {
               Something for Everyone
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From toddlers to grandparents, we've planned a full day of unforgettable experiences.
+              From toddlers to grandparents, we’ve planned a full day of unforgettable experiences.
             </p>
           </div>
 
@@ -292,7 +310,7 @@ export default function HomePage() {
                   The Munchyard Food Village
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Fuel your fun at our outdoor food truck roundup, offering a tasty mix of savory meals and sweet desserts. Whether you're craving BBQ, tacos, or gourmet treats, there's something for every appetite.
+                  Fuel your fun at our outdoor food truck roundup, offering a tasty mix of savory meals and sweet desserts. Whether you’re craving BBQ, tacos, or gourmet treats, there's something for every appetite.
                 </p>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2"><span className="text-green-500">•</span> 10+ local food trucks</li>
@@ -340,7 +358,7 @@ export default function HomePage() {
                   Live Shows All Day
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Non-stop family entertainment all day on our main stage. From dazzling magic shows to incredible acrobats and jugglers, there's always something amazing happening.
+                  Non-stop family entertainment all day on our main stage. From dazzling magic shows to incredible acrobats and jugglers, there’s always something amazing happening.
                 </p>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Magic shows & acrobatic performers</li>
@@ -594,7 +612,7 @@ export default function HomePage() {
             onClick={() => setShowModal(true)}
             className="bg-gradient-to-r from-amber-400 to-orange-500 text-gray-900 px-10 py-5 rounded-full text-xl font-bold transition-all hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25"
           >
-            Register Free Now
+            Free Access — Sign Up for Text Updates
           </button>
           <p className="mt-6 text-white/50 text-sm">
             Saturday, May 9, 2026 • 11 AM – 8 PM • Eagle Mountain, Utah
@@ -624,7 +642,7 @@ export default function HomePage() {
               },
               {
                 q: 'What do I get if I register?',
-                a: 'Registered guests receive: 5 FREE activity tickets (for bounce houses, train rides, face painting, crafts), a craft station punch card (complete all stations to enter the Family Getaway raffle!), a Touch-a-Truck punch card (visit all vehicles to win Giant Tonka Trucks!), free treat coupons, and entry.'
+                a: 'Registered guests receive: 5 tear-off activity tickets (train ride, bounce house & more), free coupons for a sucker, face painting & balloon art, a Creation Station punch pass (complete all craft stations for a chance to win a FREE trip to Disneyland!), a Touch-a-Truck punch card (visit every vehicle for a chance at the $1,000 hourly giveaway!), and free Sodalicious/Churro Fries. A $35 value — completely free when you sign up for text updates.'
               },
               {
                 q: 'Can I buy more activity tickets?',
@@ -632,7 +650,7 @@ export default function HomePage() {
               },
               {
                 q: 'What activities require tickets?',
-                a: 'Bounce houses, Tiny Town toddler zone, face painting, balloon artists, the Firefly Express trackless train, and craft stations all require activity tickets. The main stage entertainment, Touch-a-Truck zone, food trucks, and vendor areas are free for everyone!'
+                a: 'Tear-off tickets (included with registration): train ride and bounce house. Coupons (with punch): sucker, face painting, balloon art. Creation Station and Touch-a-Truck require their punch passes. Free for everyone (no registration needed): yard games, sand/corn box, character meet & greet, walking entertainers, vendor village, food trucks, on-stage entertainment, chalk art competition, free throw contest, skateboard/bike exhibitions, and social posting stations.'
               },
               {
                 q: 'Where is the event located?',
@@ -660,7 +678,7 @@ export default function HomePage() {
               },
               {
                 q: 'What prizes can I win?',
-                a: 'Complete your Craft Punch Card at all creation stations to enter the FAMILY GETAWAY raffle! Complete your Touch-a-Truck Punch Card to win a GIANT TONKA TRUCK bundle! Plus, tour model homes for separate prize drawings.'
+                a: 'Complete your Creation Station punch pass at all craft stations for a chance to win a FREE trip to Disneyland! Complete your Touch-a-Truck punch card by visiting every vehicle for a chance at the $1,000 hourly giveaway! Both require registration to receive.'
               },
               {
                 q: 'What should I bring?',
