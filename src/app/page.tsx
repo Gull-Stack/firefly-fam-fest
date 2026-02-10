@@ -219,7 +219,7 @@ export default function HomePage() {
         <div className="absolute inset-0 confetti-light opacity-30" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">All-Day Entertainment</span>
+            <span className="text-amber-500 font-semibold text-sm tracking-wide uppercase">Activities</span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mt-3 mb-4">
               Something for Everyone
             </h2>
