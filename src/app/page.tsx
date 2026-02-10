@@ -122,13 +122,7 @@ export default function HomePage() {
                 <p className="text-lg md:text-xl text-white/80 mt-2">📍 Eagle Mountain, Utah</p>
               </div>
 
-              {/* $35 Value Badge - below date */}
-              <div className="mb-8">
-                <div className="inline-flex items-center gap-2 bg-amber-400/20 backdrop-blur-sm border border-amber-400/40 rounded-full px-5 py-2.5">
-                  <span className="text-amber-400 font-bold text-xl">$35 Value</span>
-                  <span className="text-white font-medium">— Yours FREE</span>
-                </div>
-              </div>
+              {/* $35 Value Badge - moved to pass image as sticker */}
 
               <div className="flex justify-center lg:justify-start mb-8">
             <button 
@@ -206,8 +200,15 @@ export default function HomePage() {
                   className="object-cover"
                 />
               </div>
+              {/* $35 Value Sticker - top right corner of pass */}
+              <div className="absolute -top-3 -right-3 z-10 rotate-12 animate-pulse">
+                <div className="bg-gradient-to-br from-amber-400 to-orange-500 text-gray-900 rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-xl border-4 border-white">
+                  <span className="font-bold text-lg leading-tight">$35</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider">Value</span>
+                  <span className="text-[9px] font-bold uppercase">Yours FREE</span>
+                </div>
+              </div>
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-200 rounded-2xl -z-10" />
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-amber-200 rounded-full -z-10" />
             </div>
           </div>
