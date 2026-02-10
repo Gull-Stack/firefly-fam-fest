@@ -710,41 +710,25 @@ export default function HomePage() {
       {/* Registration Modal - Luma Embed */}
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-6 relative max-h-[90vh] overflow-hidden">
             <button 
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10"
             >
               <X className="w-6 h-6" />
             </button>
-            
-            <div className="text-center mb-6">
-              <img src={`${BASE}/images/logo.png`}
-                alt="Firefly Fam Fest"
-                width={120}
-                height={130}
-                className="mx-auto mb-4"
-              />
-              <h3 className="text-2xl font-bold text-gray-900 font-serif mb-2">
-                Register Your Family
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Get 5 free activity tickets + exclusive perks
-              </p>
-            </div>
 
-            {/* Luma Registration Embed */}
-            <div className="flex justify-center">
-              <iframe
-                src="https://luma.com/embed/event/evt-wSH7R185vaXhneD/simple"
-                width="600"
-                height="450"
+            {/* Luma Registration Embed - full display */}
+            <div className="relative overflow-hidden rounded-xl" style={{ height: '600px' }}>
+              <iframe 
+                src="https://lu.ma/embed/checkout/evt-wSH7R185vaXhneD"
+                width="100%"
+                height="600"
                 frameBorder="0"
-                style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+                style={{ border: 'none' }}
                 allow="fullscreen; payment"
                 aria-hidden="false"
                 tabIndex={0}
-                className="w-full max-w-[600px]"
               />
             </div>
 
