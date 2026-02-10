@@ -101,49 +101,43 @@ export default function HomePage() {
 
             {/* Right side - Text content */}
             <div className="text-center lg:text-left">
-              {/* $35 Value Badge - top of hero */}
-              <div className="inline-flex items-center gap-2 bg-amber-400/20 backdrop-blur-sm border border-amber-400/40 rounded-full px-5 py-2.5 mb-6">
-                <span className="text-amber-400 font-bold text-xl">$35 Value</span>
-                <span className="text-white font-medium">— Yours FREE</span>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white font-serif mb-4 leading-[1.05]">
+              <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white font-serif mb-4 leading-[1.05]">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC72C] via-[#00BFFF] to-[#FFC72C]">
-                  FREE ACCESS
+                  FREE PASS
                 </span>
-                <br />
-                <span className="text-3xl md:text-4xl lg:text-5xl">When You Register as VIP</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-white/60 mb-2 font-medium">
-                Utah\u2019s Premier Festival for Families
-              </p>
-              
-              <p className="text-base md:text-lg text-white/50 mb-8 max-w-xl leading-relaxed">
-                An unforgettable day of wonder, play, and togetherness at Eagle Mountain\u2019s newest community.
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white font-serif mb-3">
+                Utah{'\u2019'}s Largest Family Festival
+              </h2>
+
+              <p className="text-lg md:text-xl text-white/70 mb-8 max-w-xl leading-relaxed">
+                When you register as VIP
               </p>
               
               {/* Date & Time */}
-              <div className="mb-8 bg-white/10 backdrop-blur-sm rounded-2xl p-6 inline-block border border-white/20">
+              <div className="mb-4 bg-white/10 backdrop-blur-sm rounded-2xl p-6 inline-block border border-white/20">
                 <p className="text-2xl md:text-4xl font-bold text-white mb-2">Saturday, May 9, 2026</p>
                 <p className="text-xl md:text-3xl font-semibold text-amber-400">11 AM – 8 PM</p>
                 <p className="text-lg md:text-xl text-white/80 mt-2">📍 Eagle Mountain, Utah</p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              {/* $35 Value Badge - below date */}
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-2 bg-amber-400/20 backdrop-blur-sm border border-amber-400/40 rounded-full px-5 py-2.5">
+                  <span className="text-amber-400 font-bold text-xl">$35 Value</span>
+                  <span className="text-white font-medium">— Yours FREE</span>
+                </div>
+              </div>
+
+              <div className="flex justify-center lg:justify-start mb-8">
             <button 
               onClick={() => setShowModal(true)}
-              className="group bg-gradient-to-r from-amber-400 to-orange-500 text-gray-900 px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25 flex items-center justify-center gap-2"
+              className="group bg-gradient-to-r from-amber-400 to-orange-500 text-gray-900 px-10 py-5 rounded-full text-xl font-bold transition-all hover:scale-105 hover:shadow-xl hover:shadow-amber-500/25 flex items-center justify-center gap-2"
             >
-              <Ticket className="w-5 h-5" />
-              Register FREE — Get Your VIP Pass
+              <Ticket className="w-6 h-6" />
+              Register VIP for FREE
             </button>
-            <a 
-              href="#attractions"
-              className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center gap-2"
-            >
-              See What\u2019s Included
-            </a>
               </div>
             </div>
 
