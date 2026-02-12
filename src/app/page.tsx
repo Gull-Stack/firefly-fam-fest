@@ -107,21 +107,19 @@ export default function HomePage() {
                     FREE PASS
                   </span>
                 </h1>
-                {/* $35 Value Sticker - Firefly logo style */}
-                <div className="absolute -top-2 -right-4 md:-top-4 md:-right-8 lg:-top-6 lg:-right-12 z-20 rotate-12">
+                {/* $35 Value Sticker - Firefly logo style, positioned to barely cover the S */}
+                <div className="absolute top-0 -right-2 md:top-1 md:-right-4 lg:top-2 lg:-right-6 z-20 rotate-12">
                   <div 
-                    className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex flex-col items-center justify-center"
+                    className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex flex-col items-center justify-center"
                     style={{ fontFamily: "'Fredoka', sans-serif" }}
                   >
-                    {/* Outer glow/shadow */}
-                    <div className="absolute inset-0 bg-[#1a1a2e] rounded-full scale-110 blur-sm opacity-60" />
-                    {/* Main badge */}
+                    {/* Main badge - yellow/orange gradient with white & blue text */}
                     <div className="relative bg-gradient-to-br from-[#FFD200] via-[#FFC72C] to-[#FF8C42] rounded-full w-full h-full flex flex-col items-center justify-center shadow-2xl border-4 border-white">
                       {/* Inner highlight */}
-                      <div className="absolute top-2 left-3 w-4 h-4 bg-white/40 rounded-full blur-sm" />
-                      <span className="font-bold text-xl md:text-2xl lg:text-3xl text-[#1a1a2e] leading-none drop-shadow-sm">$35</span>
-                      <span className="text-[9px] md:text-[10px] lg:text-xs font-bold text-[#1a1a2e] uppercase tracking-wide">Value</span>
-                      <span className="text-[8px] md:text-[9px] lg:text-[10px] font-bold text-[#00BBF9] uppercase">Yours FREE</span>
+                      <div className="absolute top-2 left-3 w-3 h-3 bg-white/50 rounded-full blur-sm" />
+                      <span className="font-bold text-lg md:text-xl lg:text-2xl text-white leading-none drop-shadow-md" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>$35</span>
+                      <span className="text-[8px] md:text-[9px] lg:text-[10px] font-bold text-white uppercase tracking-wide drop-shadow-md">Value</span>
+                      <span className="text-[7px] md:text-[8px] lg:text-[9px] font-bold text-[#00BBF9] uppercase" style={{ textShadow: '0px 0px 4px rgba(255,255,255,0.8)' }}>Yours FREE</span>
                     </div>
                   </div>
                 </div>
