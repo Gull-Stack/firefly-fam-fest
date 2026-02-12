@@ -208,8 +208,6 @@ export default function HomePage() {
                   <span className="text-[9px] font-bold uppercase">Yours FREE</span>
                 </div>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-amber-200/50 rounded-full -z-10" />
             </div>
           </div>
         </div>
