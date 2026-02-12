@@ -154,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Register Section */}
-      <section id="about" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      <section id="about" className="py-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 confetti-medium opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -209,7 +209,7 @@ export default function HomePage() {
                 </div>
               </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-amber-200 rounded-full -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-amber-200/50 rounded-full -z-10" />
             </div>
           </div>
         </div>
