@@ -232,7 +232,7 @@ export default function HomePage() {
           {/* Alternating Feature Sections */}
           <div className="space-y-24">
 
-            {/* Screen Free Fun / Bounce Houses */}
+            {/* 1. Bounce Houses */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 scroll-reveal-left">
                 <div className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-sm font-medium rounded-full mb-4">
@@ -266,11 +266,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Tiny Town */}
+            {/* 2. Face Painting */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="scroll-reveal-left">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
-                  <video src={`${BASE}/images/bg-tiny-town.mp4`}
+                  <video src={`${BASE}/images/face-painting.mp4`}
                     autoPlay
                     loop
                     muted
@@ -278,119 +278,49 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <img src={`${BASE}/images/word-tiny-town.png`} alt="" width={300} height={150} className="w-2/3 h-auto drop-shadow-lg" />
+                    <img src={`${BASE}/images/word-face-painting.png`} alt="" width={300} height={150} className="w-2/3 h-auto drop-shadow-lg" />
                   </div>
                 </div>
               </div>
               <div className="scroll-reveal-right">
-                <div className="inline-block px-3 py-1 bg-purple-100 text-purple-600 text-sm font-medium rounded-full mb-4">
-                  Requires Activity Ticket
+                <div className="inline-block px-3 py-1 bg-pink-100 text-pink-600 text-sm font-medium rounded-full mb-4">
+                  Included with Registration
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 font-serif mb-4">
-                  Tiny Town - Ages 2-4
+                  Professional Face Painting
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  A dedicated soft-play zone designed just for your littlest ones. Featuring mini bounce houses, a giant corn box, and a Tonka truck sandbox - safe, shaded, and perfectly sized.
+                  Our talented artists will transform your kids into their favorite characters, animals, and superheroes. From butterflies to tigers — every design is a masterpiece.
                 </p>
                 <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center gap-2"><span className="text-purple-500">•</span> Soft, safe play structures</li>
-                  <li className="flex items-center gap-2"><span className="text-purple-500">•</span> Sensory sandbox play</li>
-                  <li className="flex items-center gap-2"><span className="text-purple-500">•</span> Fully shaded & enclosed</li>
+                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Professional face painting artists</li>
+                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Endless designs to choose from</li>
+                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Safe, skin-friendly paints</li>
                 </ul>
               </div>
             </div>
 
-            {/* Food Trucks */}
+            {/* 3. Touch-A-Truck */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 scroll-reveal-left">
-                <div className="inline-block px-3 py-1 bg-green-100 text-green-600 text-sm font-medium rounded-full mb-4">
-                  Open to All
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 font-serif mb-4">
-                  The Munchyard Food Village
-                </h3>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Fuel your fun at our outdoor food truck roundup, offering a tasty mix of savory meals and sweet desserts. Whether you're craving BBQ, tacos, or gourmet treats, there's something for every appetite.
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center gap-2"><span className="text-green-500">•</span> 10+ local food trucks</li>
-                  <li className="flex items-center gap-2"><span className="text-green-500">•</span> Shaded seating areas</li>
-                  <li className="flex items-center gap-2"><span className="text-green-500">•</span> Sweet treats & desserts</li>
-                </ul>
-              </div>
-              <div className="order-1 lg:order-2 scroll-reveal-right">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
-                  <video src={`${BASE}/images/bg-food-trucks.mp4`}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img src={`${BASE}/images/word-food-trucks.png`} alt="" width={300} height={150} className="w-2/3 h-auto drop-shadow-lg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Live Entertainment */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="scroll-reveal-left">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
-                  <video src={`${BASE}/images/bg-entertainment.mp4`}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img src={`${BASE}/images/word-entertainment.png`} alt="" width={300} height={150} className="w-2/3 h-auto drop-shadow-lg" />
-                  </div>
-                </div>
-              </div>
-              <div className="scroll-reveal-right">
-                <div className="inline-block px-3 py-1 bg-violet-100 text-violet-600 text-sm font-medium rounded-full mb-4">
+                <div className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded-full mb-4">
                   Free - Open to All
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 font-serif mb-4">
-                  Live Shows All Day
+                  Touch-A-Truck
                 </h3>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Non-stop family entertainment all day on our main stage. From dazzling magic shows to incredible acrobats and jugglers, there's always something amazing happening.
+                  Kids get up close with fire trucks, police cars, construction equipment, and more! Climb in, honk the horn, and explore real vehicles. Complete your punch card by visiting every truck for a chance to win a Giant Tonka Set!
                 </p>
                 <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Magic shows & acrobatic performers</li>
-                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Professional jugglers & stilt walkers</li>
-                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Reptile & exotic animal encounters</li>
-                  <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Live music & family singalongs</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Creation Stations */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 scroll-reveal-left">
-                <div className="inline-block px-3 py-1 bg-pink-100 text-pink-600 text-sm font-medium rounded-full mb-4">
-                  Requires Activity Ticket
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 font-serif mb-4">
-                  Creation Stations
-                </h3>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Let creativity soar at our hands-on craft zones! Kids can build, design, and take home their own masterpieces. Complete your craft punch pass for a chance to win a family getaway!
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Sky High Flyers - design your own kite</li>
-                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Glow & Go Streamers - colorful ribbon wands</li>
-                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Breeze Catchers - wind-spinning windsocks</li>
-                  <li className="flex items-center gap-2"><span className="text-pink-500">•</span> Hat-tastic Creations - decorate your own hat</li>
+                  <li className="flex items-center gap-2"><span className="text-blue-500">•</span> Fire trucks, police cars & more</li>
+                  <li className="flex items-center gap-2"><span className="text-blue-500">•</span> Hands-on exploring — climb inside!</li>
+                  <li className="flex items-center gap-2"><span className="text-blue-500">•</span> Punch card → Giant Tonka Set raffle</li>
                 </ul>
               </div>
               <div className="order-1 lg:order-2 scroll-reveal-right">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
-                  <video src={`${BASE}/images/bg-crafts-for-kids.mp4`}
+                  <video src={`${BASE}/images/fire-truck.mp4`}
                     autoPlay
                     loop
                     muted
@@ -398,9 +328,43 @@ export default function HomePage() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <img src={`${BASE}/images/word-crafts-for-kids.png`} alt="" width={300} height={150} className="w-2/3 h-auto drop-shadow-lg" />
+                    <img src={`${BASE}/images/word-touch-a-truck.png`} alt="" width={300} height={150} className="w-2/3 h-auto drop-shadow-lg" />
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* 4. Raffle & Prizes */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="scroll-reveal-left">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
+                  <video src={`${BASE}/images/bg-prizes-and-raffles.mp4`}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <img src={`${BASE}/images/word-prizes-raffles.png`} alt="" width={300} height={150} className="w-2/3 h-auto drop-shadow-lg" />
+                  </div>
+                </div>
+              </div>
+              <div className="scroll-reveal-right">
+                <div className="inline-block px-3 py-1 bg-amber-100 text-amber-600 text-sm font-medium rounded-full mb-4">
+                  🎟️ Raffle Tickets
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 font-serif mb-4">
+                  Win Big All Day Long
+                </h3>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Every hour, we're giving away $1,000! Plus, complete your Creation Station punch pass for a chance to win a FREE trip to Disneyland. The more you play, the more chances to win.
+                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-center gap-2"><span className="text-amber-500">💰</span> <strong>$1,000 giveaway every hour</strong></li>
+                  <li className="flex items-center gap-2"><span className="text-amber-500">✈️</span> <strong>FREE trip to Disneyland</strong></li>
+                  <li className="flex items-center gap-2"><span className="text-amber-500">🏆</span> Giant Tonka Set & more prizes</li>
+                </ul>
               </div>
             </div>
 
@@ -460,14 +424,14 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { image: `${BASE}/images/face-painting.mp4`, title: 'Face Painting', desc: 'Professional artists, endless designs', tag: 'Ticket', isVideo: true, wordOverlay: `${BASE}/images/word-face-painting.png` },
+              { image: `${BASE}/images/bg-tiny-town.mp4`, title: 'Tiny Town (Ages 2-4)', desc: 'Mini bounce houses, corn box & Tonka sandbox', tag: 'Ticket', isVideo: true, wordOverlay: `${BASE}/images/word-tiny-town.png` },
+              { image: `${BASE}/images/bg-crafts-for-kids.mp4`, title: 'Creation Stations', desc: 'Kites, ribbon wands, windsocks & hat decorating', tag: 'Ticket', isVideo: true, wordOverlay: `${BASE}/images/word-crafts-for-kids.png` },
+              { image: `${BASE}/images/bg-food-trucks.mp4`, title: 'Food Truck Village', desc: '10+ local food trucks, shaded seating', tag: 'Free', isVideo: true, wordOverlay: `${BASE}/images/word-food-trucks.png` },
+              { image: `${BASE}/images/bg-entertainment.mp4`, title: 'Live Entertainment', desc: 'Magic shows, acrobats, jugglers & animal encounters', tag: 'Free', isVideo: true, wordOverlay: `${BASE}/images/word-entertainment.png` },
               { image: `${BASE}/images/bg-balloon-art.mp4`, title: 'Balloon Artists', desc: 'Custom creations for every kid', tag: 'Ticket', isVideo: true, wordOverlay: `${BASE}/images/word-balloon-art.png` },
               { image: `${BASE}/images/bg-performers.mp4`, title: 'Character Meet & Greet', desc: 'Elsa, Anna, Belle, Spiderman, Mario, Bluey & more!', tag: 'Free', isVideo: true, wordOverlay: `${BASE}/images/word-performers.png` },
               { image: `${BASE}/images/bg-train-rides.mp4`, title: '🚂 Firefly Express', desc: 'Trackless train ride through the festival grounds', tag: 'Ticket', isVideo: true },
-              { image: `${BASE}/images/fire-truck.mp4`, title: '🚒 Big Truck Corral', desc: 'Touch-a-Truck zone + punch card for Giant Tonka raffle!', tag: 'Free', isVideo: true, wordOverlay: `${BASE}/images/word-touch-a-truck.png` },
               { image: `${BASE}/images/bg-music-singalongs.mp4`, title: 'Music & Singalongs', desc: 'Family-friendly tunes all day', tag: 'Free', isVideo: true, wordOverlay: `${BASE}/images/word-music-singalongs.png` },
-              { image: `${BASE}/images/bg-prizes-and-raffles.mp4`, title: '🏆 Grand Prizes', desc: 'Craft pass → Family Getaway! Truck pass → Giant Tonka Set!', tag: 'Free', isVideo: true, wordOverlay: `${BASE}/images/word-prizes-raffles.png` },
-              { image: `${BASE}/images/bg-crafts-for-kids.mp4`, title: 'Punch Card Fun', desc: 'Complete activities to enter prize drawings!', tag: 'Free', isVideo: true, wordOverlay: `${BASE}/images/word-crafts-for-kids.png` },
             ].map((item, i) => (
               <div key={i} className={`scroll-reveal stagger-${i + 1} bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group`}>
                 <div className="aspect-[4/3] relative overflow-hidden">
