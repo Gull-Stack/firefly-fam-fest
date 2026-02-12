@@ -383,21 +383,7 @@ export default function HomePage() {
 
             {/* 5. Tiny Town */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="scroll-reveal-left">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
-                  <video src={`${BASE}/images/bg-tiny-town.mp4`}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img src={`${BASE}/images/word-tiny-town.png`} alt="" width={300} height={150} className="w-11/12 h-auto drop-shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-2xl" />
-                  </div>
-                </div>
-              </div>
-              <div className="scroll-reveal-right">
+              <div className="order-2 lg:order-1 scroll-reveal-left">
                 <div className="inline-block px-3 py-1 bg-purple-100 text-purple-600 text-sm font-medium rounded-full mb-4">
                   Requires Activity Ticket
                 </div>
@@ -413,11 +399,39 @@ export default function HomePage() {
                   <li className="flex items-center gap-2"><span className="text-purple-500">•</span> Fully shaded & enclosed</li>
                 </ul>
               </div>
+              <div className="order-1 lg:order-2 scroll-reveal-right">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
+                  <video src={`${BASE}/images/bg-tiny-town.mp4`}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <img src={`${BASE}/images/word-tiny-town.png`} alt="" width={300} height={150} className="w-11/12 h-auto drop-shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-2xl" />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* 6. Live Entertainment */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 scroll-reveal-left">
+              <div className="scroll-reveal-left">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
+                  <video src={`${BASE}/images/bg-entertainment.mp4`}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <img src={`${BASE}/images/word-entertainment.png`} alt="" width={300} height={150} className="w-11/12 h-auto drop-shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-2xl" />
+                  </div>
+                </div>
+              </div>
+              <div className="scroll-reveal-right">
                 <div className="inline-block px-3 py-1 bg-violet-100 text-violet-600 text-sm font-medium rounded-full mb-4">
                   Free - Open to All
                 </div>
@@ -433,20 +447,6 @@ export default function HomePage() {
                   <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Reptile & exotic animal encounters</li>
                   <li className="flex items-center gap-2"><span className="text-violet-500">•</span> Live music & family singalongs</li>
                 </ul>
-              </div>
-              <div className="order-1 lg:order-2 scroll-reveal-right">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative group">
-                  <video src={`${BASE}/images/bg-entertainment.mp4`}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img src={`${BASE}/images/word-entertainment.png`} alt="" width={300} height={150} className="w-11/12 h-auto drop-shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:drop-shadow-2xl" />
-                  </div>
-                </div>
               </div>
             </div>
 
