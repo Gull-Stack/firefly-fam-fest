@@ -41,11 +41,11 @@ export default function HomePage() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="https://www.candlelighthomes.com/firefly-vision" className="flex-shrink-0" target="_blank" rel="noopener noreferrer">
-            <img src={`${BASE}/images/candlelight-logo.svg`}
+            <img src={`${BASE}/images/candlelight-homes-logo.jpg`}
               alt="Candlelight Homes"
-              width={180}
-              height={40}
-              className="h-10 w-auto"
+              width={220}
+              height={50}
+              className="h-12 w-auto"
             />
           </a>
           <div className="hidden md:flex items-center gap-8">
